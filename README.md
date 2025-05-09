@@ -1,92 +1,95 @@
-# E-Commerce Backend Java Project
+# E-Ticaret Backend Java Projesi
 
-## Project Description
+## Proje Açıklaması
 
-This project implements the backend for an e-commerce platform built using Spring Boot. It provides an API for users to add products to their shopping cart, manage their cart, and place orders. Security is implemented using JWT (JSON Web Token), ensuring user authentication. It also includes necessary services and database structures for managing user accounts, shopping carts, and orders.
+Bu proje, Spring Boot kullanılarak geliştirilen bir e-ticaret platformunun arka ucunu (backend) uygular. Kullanıcıların ürünleri alışveriş sepetine eklemeleri, sepetlerini yönetmeleri ve sipariş vermeleri için bir API sağlar. Güvenlik, JWT (JSON Web Token) kullanılarak sağlanır ve kullanıcı kimlik doğrulaması garanti altına alınır. Ayrıca, kullanıcı hesapları, alışveriş sepetleri ve siparişleri yönetmek için gerekli servisleri ve veritabanı yapısını da içerir.
 
 ---
 
-## Technologies Used
+## Kullanılan Teknolojiler
 
-- **Java 17** (or later versions)
+- **Java 17** (veya daha yeni sürümler)
 - **Spring Boot** (Web, Data, Security, JPA)
-- **JWT** (JSON Web Token) for authentication
-- **Spring Security** for securing API endpoints
-- **PostgreSQL** (or another preferred database)
-- **Lombok** for reducing boilerplate code
-- **Maven** for dependency management
-- **JPA / Hibernate** for database interactions
-- **Postman** for API testing
+- **JWT** (Kimlik doğrulama için JSON Web Token)
+- **Spring Security** (API uç noktalarını güvenli hale getirmek için)
+- **PostgreSQL** (veya tercihinize bağlı başka bir veritabanı)
+- **Lombok** (Boilerplate kodları azaltmak için)
+- **Maven** (Bağımlılık yönetimi için)
+- **JPA / Hibernate** (Veritabanı etkileşimleri için)
+- **Postman** (API testleri için)
 
 ---
 
-## Features
+## Özellikler
 
-- User registration and login
-- JWT-based security and authentication
-- Shopping cart management
-  - Add, remove, and update product quantities in the cart
-  - View items in the cart
-  - Clear the cart
-- Order creation
-- Admin role for managing users and products
-- Error handling with user-friendly error messages
-- Secured API endpoints with Spring Security
+- Kullanıcı kaydı ve giriş
+- JWT tabanlı güvenlik ve kimlik doğrulama
+- Alışveriş sepeti yönetimi
+  - Sepete ürün ekleme, çıkarma ve miktar güncelleme
+  - Sepetteki ürünleri görüntüleme
+  - Sepeti temizleme
+- Sipariş oluşturma
+- Kullanıcıları ve ürünleri yönetmek için admin yetkisi
+- Kullanıcı dostu hata mesajları ile hata yönetimi
+- Spring Security ile güvenli API uç noktaları
 
 ---
 
-## Setup
+## Kurulum
 
-1. Clone the repository to your local machine.
+1. Depoyu bilgisayarınıza klonlayın:
 
     ```bash
     git clone https://github.com/your-username/E-Commerce-Backend-Java-Project.git
     ```
 
-2. Open the project in your IDE (e.g., IntelliJ IDEA or Eclipse).
+2. Projeyi IDE’nizde açın (örneğin IntelliJ IDEA veya Eclipse).
 
-3. Add the necessary properties in the `application.properties` file. Specifically, ensure you update the following fields with your own information:
+3. `application.properties` dosyasına gerekli bilgileri ekleyin. Özellikle aşağıdaki alanları kendi bilgilerinizle doldurduğunuzdan emin olun:
 
-    - **Database**:
-      - `spring.datasource.url`: Set your database URL.
-      - `spring.datasource.username`: Your database username.
-      - `spring.datasource.password`: Your database password.
+    - **Veritabanı**:
+      - `spring.datasource.url`: Veritabanınızın bağlantı URL’si.
+      - `spring.datasource.username`: Veritabanı kullanıcı adınız.
+      - `spring.datasource.password`: Veritabanı şifreniz.
       
-    - **Email**:
-      - `spring.mail.username`: Your email address (for sending confirmation emails).
-      - `spring.mail.password`: Application-specific password for your email account.
+    - **E-posta**:
+      - `spring.mail.username`: E-posta adresiniz (onay e-postaları göndermek için).
+      - `spring.mail.password`: E-posta hesabınıza özel uygulama şifresi.
 
-    **Warning:** Make sure to replace the placeholders in the `application.properties` file with your actual credentials:
-    
+    **Uyarı:** `application.properties` dosyasındaki örnek değerleri kendi gerçek bilgilerinizle değiştirmeyi unutmayın:
+
     ```properties
-    spring.datasource.url=[Your database URL]
-    spring.datasource.username=[Your username]
-    spring.datasource.password=[Your password]
+    spring.datasource.url=[Veritabanı URL’iniz]
+    spring.datasource.username=[Kullanıcı adınız]
+    spring.datasource.password=[Şifreniz]
     
-    spring.mail.username=[Your email address (for sending confirmation emails)]
-    spring.mail.password=[Application-specific password for your email account]
+    spring.mail.username=[E-posta adresiniz (onay e-postaları için)]
+    spring.mail.password=[Uygulamaya özel şifreniz]
     ```
 
-4. Run the project.
+4. Projeyi çalıştırın:
 
     ```bash
     ./mvnw spring-boot:run
     ```
 
-5. Open your browser and access the API at `http://localhost:8080`.
+5. Tarayıcınızdan `http://localhost:8080` adresine giderek API'ye erişebilirsiniz.
 
 ---
 
-## Postman Workspace
-You can also test the API through the shared Postman workspace:
-[<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://god.gw.postman.com/run-collection/37739159-d3965a51-94ac-419c-8068-b965338288db?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D37739159-d3965a51-94ac-419c-8068-b965338288db%26entityType%3Dcollection%26workspaceId%3Ddbeb00ea-a61f-4017-acac-c435de319aa6)
+## Postman Alanı
 
-## Contribution
-
-Feel free to fork this repository, make improvements, and submit a pull request. Contributions are always welcome!
+API'yi aşağıdaki bağlantı üzerinden paylaşılan Postman çalışma alanında da test edebilirsiniz:  
+[<img src="https://run.pstmn.io/button.svg" alt="Postman'da Çalıştır" style="width: 128px; height: 32px;">](https://god.gw.postman.com/run-collection/37739159-d3965a51-94ac-419c-8068-b965338288db?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D37739159-d3965a51-94ac-419c-8068-b965338288db%26entityType%3Dcollection%26workspaceId%3Ddbeb00ea-a61f-4017-acac-c435de319aa6)
 
 ---
 
-## License
+## Katkıda Bulunma
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Bu repoyu forklayabilir, geliştirmeler yapabilir ve pull request gönderebilirsiniz. Katkılarınız her zaman memnuniyetle karşılanır!
+
+---
+
+## Lisans
+
+Bu proje [MIT Lisansı](LICENSE) ile lisanslanmıştır. Detaylar için LICENSE dosyasına göz atabilirsiniz.
